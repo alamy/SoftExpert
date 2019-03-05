@@ -136,7 +136,7 @@
                             echo '<td width=250>';
                                 
                             echo ' ';
-                            echo '<a class="waves-effect waves-light btn-small indigo accent-4" href="update.php?id='.$row['id'].'">Atualizar</a>';
+                          
                             echo ' ';
                             echo '<a class="waves-effect waves-light btn-small deep-orange darken-4" href="deleteTipo.php?id='.$row['id'].'">Excluir</a>';
                             echo '</td>';
@@ -149,5 +149,4 @@
         
    
 
- </body>
-</html>
+<?php  include 'footer.php';?>

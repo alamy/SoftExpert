@@ -3,8 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link href="css/materialize.css" rel="stylesheet">
-        <script src="js/materialize.js"></script>
-        <script src="js/jquery.min.js"></script>
+       
 
     </head>
 

@@ -185,7 +185,7 @@
                             <th>Produto</th>
                             <th>Valor da venda</th>
                             <th>Tipo de Pagamento</th>
-                            <th>Troca</th>
+                        
                             <th>Ação</th>
                         </tr>
                     </thead>
@@ -207,9 +207,9 @@
                             echo '<td width=250>';
                                 
                             echo ' ';
-                            echo '<a class="waves-effect waves-light btn-small indigo accent-4" href="update.php?id='.$row['id'].'">Atualizar</a>';
+                           
                             echo ' ';
-                            echo '<a class="waves-effect waves-light btn-small deep-orange darken-4" href="deleteTipo.php?id='.$row['id'].'">Excluir</a>';
+                            echo '<a class="waves-effect waves-light btn-small light-green darken-3" href="viewVenda.php?id='.$row['id'].'">Visualizar</a>';
                             echo '</td>';
                             echo '<tr>';
                         }
@@ -220,6 +220,4 @@
 
               
 
-
- </body>
-</html>
+<?php  include 'footer.php';?>

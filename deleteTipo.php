@@ -35,7 +35,7 @@ if(!empty($_POST))
         <div class="container">
             <div class="span10 offset1">
                 <div class="row">
-                    <h3 class="well">Excluir Contato</h3>
+                    <h3 class="well">Excluir Tipo</h3>
                 </div>
                 <form class="form-horizontal" action="deleteTipo.php" method="post">
                     <input type="hidden" name="id" value="<?php echo $id;?>"/>

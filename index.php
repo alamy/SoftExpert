@@ -1,5 +1,6 @@
 <?php
     require 'banco.php';
+    $pdo = Banco::conectar();
 
     include 'header.php';
     ?>
@@ -12,10 +13,8 @@
             </div>
             </br>
             <div class="row">
-                <p>
-                    <a href="create.php" class="btn btn-success">Adicionar Produto</a>
-                </p>
-                <table class="table table-striped table-bordered">
+               <h3>Produtos</h3>
+                <table class="highlight">
                     <thead>
                         <tr>
                             <th>Nome</th>
@@ -27,25 +26,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php
-                    
-                        $pdo = Banco::conectar();
-                        $sql = 'SELECT * FROM produtos ORDER BY id DESC';
-                        
+                        <?php                  
+                        $sql = 'SELECT * FROM produto ORDER BY id DESC';           
                         foreach($pdo->query($sql)as $row)
                         {
                             echo '<tr>';
                             echo '<td>'. $row['id'] . '</td>';
                             echo '<td>'. $row['nome'] . '</td>';
-                            echo '<td>'. $row['telefone'] . '</td>';
-                            echo '<td>'. $row['email'] . '</td>';
-                            echo '<td>'. $row['sexo'] . '</td>';
+                            echo '<td>'. $row['tipo'] . '</td>';
+                            echo '<td>'. $row['valor'] . '</td>';
+                            echo '<td>'. $row['quantidade'] . '</td>';
                             echo '<td width=250>';
-                            echo '<a class="btn btn-primary" href="read.php?id='.$row['id'].'">Listar</a>';
+                          
                             echo ' ';
-                            echo '<a class="btn btn-warning" href="update.php?id='.$row['id'].'">Atualizar</a>';
+                           
                             echo ' ';
-                            echo '<a class="btn btn-danger" href="delete.php?id='.$row['id'].'">Excluir</a>';
+                            echo '<a class="btn btn-danger" href="deleteProd.php?id='.$row['id'].'">Excluir</a>';
                             echo '</td>';
                             echo '<tr>';
                         }
@@ -56,5 +52,6 @@
             </div>
         </div>
         </div>
-    </body>
-</html>
+<?php
+        include 'footer.php';
+?>

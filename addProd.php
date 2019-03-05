@@ -28,7 +28,7 @@
                              <?php                    
                                  foreach($pdo->query($tipo)as $row)
                                     {                    
-                                     echo ' <label><input name="tipo" type="radio" value="'. $row['nomeTipo'] .'" /> <span>'. $row['nomeTipo'] . '</span></label>';                    
+                                     echo ' <label><input name="tipo" type="radio" value="'. $row['percentual'] .'" /> <span>'. $row['nomeTipo'] . '</span></label>';                    
                                      }            
                                     ?>   
                             </div>
@@ -86,6 +86,7 @@
         $nome = $_POST['nome'];
         $tipo = $_POST['tipo'];
         $valor = $_POST['valor'];
+    
         $quantidade = $_POST['quantidade'];
         
         
@@ -123,9 +124,9 @@
         {
             
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "INSERT INTO produto (nome, tipo, valor, quantidade) VALUES(?,?,?,?)";
+            $sql = "INSERT INTO produto (nome, tipo, valor, quantidade, indice) VALUES(?,?,?,?,?)";
             $q = $pdo->prepare($sql);
-            $q->execute(array($nome,$tipo,$valor,$quantidade));
+            $q->execute(array($nome,$tipo,$valor,$quantidade,$indice));
             Banco::desconectar();
             header("Location: addProd.php");
         }
@@ -171,6 +172,4 @@
                     </tbody>                   
                 </table>         
 
-
- </body>
-</html>
+<?php  include 'footer.php';?>
